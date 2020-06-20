@@ -2,9 +2,19 @@
 
 Track your speed, distance, elevation and gradient as you cycle, whilst viewing an onscreen map.
 
+## Credits
+
+### Development
+
+Mike Sheldon <mike@mikeasoft.com>
+
+### Artwork
+
+Logo - Derived from: https://www.elegantthemes.com/blog/freebie-of-the-week/beautiful-flat-icons-for-free
+
 ## License
 
-Copyright (C) 2020  Michael Sheldon
+Copyright (C) 2020 Mike Sheldon
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License version 3, as published
 by the Free Software Foundation.
