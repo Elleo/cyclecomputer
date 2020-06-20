@@ -1,0 +1,7 @@
+[Desktop Entry]
+_Name=Cycle Computer
+Exec=cyclecomputer %U
+Icon=assets/logo.svg
+Terminal=false
+Type=Application
+X-Ubuntu-Touch=true

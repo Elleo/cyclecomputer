@@ -1,0 +1,15 @@
+{
+    "name": "cyclecomputer.mikeasoft.com",
+    "description": "Track your speed, distance, elevation and gradient as you cycle, whilst viewing an onscreen map.",
+    "architecture": "@CLICK_ARCH@",
+    "title": "Cycle Computer",
+    "hooks": {
+        "cyclecomputer": {
+            "apparmor": "cyclecomputer.apparmor",
+            "desktop":  "cyclecomputer.desktop"
+        }
+    },
+    "version": "@BUILD_VERSION@",
+    "maintainer": "Michael Sheldon <mike@mikeasoft.com>",
+    "framework" : "ubuntu-sdk-16.04"
+}
