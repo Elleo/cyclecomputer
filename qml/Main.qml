@@ -19,6 +19,8 @@ import Ubuntu.Components 1.3
 //import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
+import QtLocation 5.9
+import QtPositioning 5.9
 
 import Example 1.0
 
@@ -39,30 +41,108 @@ MainView {
             title: i18n.tr('Cycle Computer')
         }
 
+        Plugin {
+            id: mapPlugin
+            name: "osm"
+            PluginParameter { name: "osm.useragent"; value: "cyclecomputer.mikeasoft.com 0.1" }
+            PluginParameter { name: "osm.mapping.highdpi_tiles"; value: true }
+        }
+
+        PositionSource {
+            id: positionSource
+            preferredPositioningMethods: PositionSource.SatellitePositioningMethods
+            active: true
+            onPositionChanged: {
+                map.center = position.coordinate
+            }
+        }
+
         ColumnLayout {
             spacing: units.gu(2)
+
             anchors {
-                margins: units.gu(2)
+                margins: 0
                 top: header.bottom
                 left: parent.left
                 right: parent.right
                 bottom: parent.bottom
             }
 
-            Item {
+            Map {
+                plugin: mapPlugin
+                center: positionSource.position.coordinate
+                zoomLevel: 17
                 Layout.fillHeight: true
+                Layout.fillWidth: true
             }
 
-            Label {
-                id: label
+            RowLayout {
+                spacing: units.gu(2)
                 Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr('Press the button below and check the logs!')
-            }
 
-            Button {
-                Layout.alignment: Qt.AlignHCenter
-                text: i18n.tr('Press here!')
-                onClicked: Example.speak()
+                ColumnLayout {
+                    spacing: units.gu(1)
+
+                    Label {
+                       text: i18n.tr("Speed")
+                    }
+
+                    RowLayout {
+                        spacing: units.gu(1)
+
+                        Label {
+                            id: speed
+                            text: "0"
+                            font.pixelSize: units.gu(4)
+                        }
+
+                        Label {
+                            text: "mph"
+                        }
+                    }
+                }
+
+                ColumnLayout {
+                    spacing: units.gu(1)
+
+                    Label {
+                        text: i18n.tr("Distance")
+                    }
+
+                    RowLayout {
+                        spacing: units.gu(1)
+                        Label {
+                            id: distance
+                            text: "0"
+                            font.pixelSize: units.gu(4)
+                        }
+
+                        Label {
+                            text: "miles"
+                        }
+                    }
+                }
+
+                ColumnLayout {
+                    spacing: units.gu(1)
+
+                    Label {
+                        text: i18n.tr("Elevation")
+                    }
+
+                    RowLayout {
+                        spacing: units.gu(1)
+                        Label {
+                            id: elevation
+                            text: "0"
+                            font.pixelSize: units.gu(4)
+                        }
+
+                        Label {
+                            text: "feet"
+                        }
+                    }
+                }
             }
 
             Item {
