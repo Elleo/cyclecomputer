@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: cyclecomputer.mikeasoft.com\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-22 09:39+0000\n"
+"POT-Creation-Date: 2020-06-22 11:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,14 +21,14 @@ msgstr ""
 msgid "Cycle Computer"
 msgstr ""
 
-#: ../qml/Main.qml:87
+#: ../qml/Main.qml:92
 msgid "Speed"
 msgstr ""
 
-#: ../qml/Main.qml:109
+#: ../qml/Main.qml:114
 msgid "Distance"
 msgstr ""
 
-#: ../qml/Main.qml:130
+#: ../qml/Main.qml:135
 msgid "Elevation"
 msgstr ""

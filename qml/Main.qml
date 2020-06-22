@@ -45,6 +45,7 @@ MainView {
             id: mapPlugin
             name: "osm"
             PluginParameter { name: "osm.useragent"; value: "cyclecomputer.mikeasoft.com 0.1" }
+            PluginParameter { name: "osm.mapping.providersrepository.address"; value: "http://cyclecomputer.mikeasoft.com" }
             PluginParameter { name: "osm.mapping.highdpi_tiles"; value: true }
         }
 
@@ -52,9 +53,6 @@ MainView {
             id: positionSource
             preferredPositioningMethods: PositionSource.SatellitePositioningMethods
             active: true
-            onPositionChanged: {
-                map.center = position.coordinate
-            }
         }
 
         ColumnLayout {
@@ -74,6 +72,7 @@ MainView {
                 zoomLevel: 17
                 Layout.fillHeight: true
                 Layout.fillWidth: true
+                activeMapType: supportedMapTypes[1] // Cycle map
             }
 
             RowLayout {
