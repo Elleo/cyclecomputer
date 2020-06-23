@@ -16,11 +16,11 @@
 
 import QtQuick 2.7
 import Ubuntu.Components 1.3
-//import QtQuick.Controls 2.2
 import QtQuick.Layouts 1.3
 import Qt.labs.settings 1.0
 import QtLocation 5.9
 import QtPositioning 5.9
+import QtSystemInfo 5.5
 
 import Example 1.0
 
@@ -32,6 +32,10 @@ MainView {
 
     width: units.gu(45)
     height: units.gu(75)
+
+   ScreenSaver {
+      screenSaverEnabled: false
+   }
 
     Page {
         anchors.fill: parent
